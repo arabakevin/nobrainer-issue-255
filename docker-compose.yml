@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid; bundle exec bin/rails s -p 3000 -b '0.0.0.0'"
+    environment:
+      - RAILS_ENV=development
+      - RETHINKDB_HOST=rethinkdb
+      - SERVER_PORT=3000
+    image: arabakevin/nobrainer-issue-255
+    networks:
+      - nobrainer
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/application
+    volumes_from:
+      - bundle
+  bundle:
+    command: echo Bundler data container
+    image: arabakevin/nobrainer-issue-255
+    volumes:
+      - /usr/local/bundle
+  rethinkdb:
+    image: rethinkdb:2.3.6
+    networks:
+      - nobrainer
+    ports:
+      - "8080:8080"
+
+networks:
+  nobrainer:
