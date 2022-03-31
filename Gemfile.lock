@@ -80,7 +80,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     msgpack (1.3.1)
-    nio4r (2.5.2)
+    nio4r (2.5.8)
     nobrainer (0.34.0)
       activemodel (>= 4.1.0)
       activesupport (>= 4.1.0)
@@ -89,7 +89,7 @@ GEM
       symbol_decoration (~> 1.1)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
-    puma (4.3.0)
+    puma (4.3.12)
       nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (1.1.0)
@@ -145,7 +145,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   nobrainer (~> 0.34.0)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.1)
 
 RUBY VERSION
